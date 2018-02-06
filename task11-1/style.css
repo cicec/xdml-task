@@ -1,0 +1,38 @@
+body {
+    background: #000000;
+}
+
+.yin-yang {
+    box-sizing: border-box;
+    margin: auto;
+    width: 404px;
+    height: 404px;
+    border-radius: 100%;
+    border: solid #FFFFFF;
+    border-width: 2px 2px 200px 2px;
+    position: relative;
+}
+
+.yin-yang::before,
+.yin-yang::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    position: absolute;
+}
+
+.yin-yang::before {
+    border: solid 80px #FFFFFF;
+    background: #000000;
+    top: 50%;
+    left: 0;
+}
+
+.yin-yang::after {
+    border: solid 80px #000000;
+    background: #FFFFFF;
+    top: 50%;
+    left: 50%;
+}
