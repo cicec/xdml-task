@@ -46,7 +46,7 @@ function insertionSort(paramArr) {
     return arr
 }
 
-//  随机快速排序
+//  快速排序
 function randomizedQuickSort(paramArr) {
     const swap = (arr, index1, index2) => {
         const temp = arr[index1]
@@ -68,12 +68,14 @@ function randomizedQuickSort(paramArr) {
     }
 
     const sort = (arr, start, end) => {
-        if (start > end) return
+        if (start > end) return []
         const storeIndex = partition(arr, start, end)
-        sort(arr, start, storeIndex - 1)
-        sort(arr, storeIndex + 1, end)
+        return [
+            ...sort(arr, start, storeIndex - 1),
+            arr[storeIndex],
+            ...sort(arr, storeIndex + 1, end)
+        ]
     }
 
-    sort(paramArr, 0, paramArr.length - 1)
-    return paramArr
+    return sort(paramArr.slice(), 0, paramArr.length - 1)
 }
