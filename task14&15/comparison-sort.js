@@ -45,3 +45,35 @@ function insertionSort(paramArr) {
     }
     return arr
 }
+
+//  随机快速排序
+function randomizedQuickSort(paramArr) {
+    const swap = (arr, index1, index2) => {
+        const temp = arr[index1]
+        arr[index1] = arr[index2]
+        arr[index2] = temp
+    }
+
+    const partition = (arr, start, end) => {
+        let storeIndex = start
+        const standardIndex = end
+        for (let i = start; i < end; i++) {
+            if (arr[i] <= arr[standardIndex]) {
+                swap(arr, storeIndex, i)
+                storeIndex += 1
+            }
+        }
+        swap(arr, storeIndex, end)
+        return storeIndex
+    }
+
+    const sort = (arr, start, end) => {
+        if (start > end) return
+        const storeIndex = partition(arr, start, end)
+        sort(arr, start, storeIndex - 1)
+        sort(arr, storeIndex + 1, end)
+    }
+
+    sort(paramArr, 0, paramArr.length - 1)
+    return paramArr
+}
