@@ -107,7 +107,7 @@ ol {
     top: 0;
     left: 0;
     right: 0;
-    background: url('./img/rs-cover.jpg') no-repeat;
+    background: url('../img/rs-cover.jpg') no-repeat;
     background-position: center;
     background-size: cover;
     z-index: -1;
