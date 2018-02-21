@@ -128,6 +128,7 @@ ol {
 .top-nav-bar>nav>ul>li {
     float: right;
     margin: 0 22px;
+    position: relative;
 }
 
 .top-nav-bar>nav>ul>li>a {
@@ -146,11 +147,53 @@ ol {
     background: #e6686a;
     margin-top: 5px;
     border-radius: 2px;
+    position: relative;
+    right: 6px;
     transition: 0.2s ease;
 }
 
-.top-nav-bar>nav>ul>li>a:hover::after {
-    width: 76%;
+.top-nav-bar>nav>ul>li:hover>a::after {
+    width: 100%;
+}
+
+.top-nav-bar>nav>ul>li .submenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #ffffff;
+    color: #3d4451;
+    font-size: 14px;
+    line-height: 40px;
+    white-space: nowrap;
+    padding: 12px 40px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+    display: none;
+}
+
+.top-nav-bar>nav>ul>li.active .submenu {
+    display: block;
+    animation: submenu-enter 0.4s;
+}
+
+@keyframes submenu-enter {
+    from {
+        opacity: 0;
+        right: 100%;
+    }
+    to {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+.top-nav-bar>nav>ul>li .submenu>li {
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.top-nav-bar>nav>ul>li .submenu>li:hover {
+    color: #e8676b;
 }
 
 .banner {

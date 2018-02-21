@@ -22,6 +22,17 @@ function main() {
         }
     })
 
+    //  鼠标悬浮子级菜单
+    const navList = document.querySelectorAll('.top-nav-bar>nav>ul>li')
+    navList.forEach((item) => {
+        item.onmouseover = () => {
+            item.classList.add('active')
+        }
+        item.onmouseleave = () => {
+            item.classList.remove('active')
+        }
+    })
+
     //  作品集切换
     portfolioState1.onclick = () => {
         portfolioBar.className = 'bar state1'
