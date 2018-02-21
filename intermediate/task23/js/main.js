@@ -1,4 +1,7 @@
 function main() {
+    //  Loading画面
+    // loading.classList.remove('active')
+
     //  顶部导航栏滚动样式
     window.onscroll = () => {
         if (window.scrollY > 0) {
@@ -7,6 +10,17 @@ function main() {
             topNavBar.classList.remove('scolling')
         }
     }
+
+    //  导航页内跳转
+    const navItems = document.querySelectorAll('.top-nav-bar>nav>ul>li>a')
+    navItems.forEach((item) => {
+        item.onclick = (event) => {
+            event.preventDefault()
+            const href = event.currentTarget.getAttribute('href')
+            const element = document.querySelector(href)
+            window.scrollTo(0, element.offsetTop - 100)
+        }
+    })
 
     //  作品集切换
     portfolioState1.onclick = () => {
