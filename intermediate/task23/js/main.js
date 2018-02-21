@@ -1,6 +1,6 @@
 function main() {
     //  Loading画面
-    // loading.classList.remove('active')
+    loading.classList.remove('loading')
 
     //  顶部导航栏滚动样式
     window.onscroll = () => {
