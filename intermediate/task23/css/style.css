@@ -46,6 +46,16 @@ ol {
     top: 0;
     left: 0;
     right: 0;
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+    transition: all 0.6s;
+}
+
+.top-nav-bar.scolling {
+    background: #ffffff;
+    color: #3d4451;
+    padding: 0 40px;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.48);
 }
 
 .top-nav-bar>.logo {
@@ -78,9 +88,10 @@ ol {
 }
 
 .top-nav-bar>nav>ul>li>a {
-    font-size: 13px;
+    letter-spacing: 12px;
+    font-size: 15px;
     font-weight: bold;
-    color: rgba(255, 255, 255, 0.7);
+    color: inherit;
     text-decoration: none;
 }
 
@@ -96,7 +107,7 @@ ol {
 }
 
 .top-nav-bar>nav>ul>li>a:hover::after {
-    width: 100%;
+    width: 76%;
 }
 
 .banner {
