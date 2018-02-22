@@ -152,7 +152,8 @@ ol {
     transition: 0.2s ease;
 }
 
-.top-nav-bar>nav>ul>li:hover>a::after {
+.top-nav-bar>nav>ul>li:hover>a::after,
+.top-nav-bar>nav>ul>li>a.active::after{
     width: 100%;
 }
 
@@ -171,7 +172,7 @@ ol {
     display: none;
 }
 
-.top-nav-bar>nav>ul>li.active .submenu {
+.top-nav-bar>nav>ul>li.hover .submenu {
     display: block;
     animation: submenu-enter 0.4s;
 }
