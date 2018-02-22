@@ -11,11 +11,25 @@ function main() {
         }
     }
 
-    //  设置导航项状态
-    const setNavItemsStatus = () => {
-        const mainElements = document.querySelectorAll('[data-x]')
+    //  获取页面中主要元素
+    const mainElements = document.querySelectorAll('[data-x]')
+    mainElements.forEach((item) => { item.classList.add('ready-enter') })
+
+    //  元素入场
+    const enterElement = () => {
         mainElements.forEach((item) => {
-            const pageMiddleScrollY = window.scrollY + (document.documentElement.clientHeight / 2)
+            const elementEnterScrollY = window.scrollY + (document.documentElement.clientHeight * 0.6)
+            if (elementEnterScrollY > item.offsetTop) {
+                item.classList.remove('ready-enter')
+                item.classList.add('enter')
+            }
+        })
+    }
+
+    //  设置导航项状态
+    const setNavItemsState = () => {
+        mainElements.forEach((item) => {
+            const pageMiddleScrollY = window.scrollY + (document.documentElement.clientHeight * 0.5)
             if (pageMiddleScrollY > item.offsetTop) {
                 const a = document.querySelector(`[href="#${item.id}"]`)
                 const navItems = document.querySelectorAll('.top-nav-bar>nav>ul>li>a')
@@ -27,9 +41,11 @@ function main() {
         })
     }
 
+    enterElement()
     window.onscroll = () => {
+        enterElement()
+        setNavItemsState()
         navBarOnScroll()
-        setNavItemsStatus()
     }
 
     //  导航页内跳转

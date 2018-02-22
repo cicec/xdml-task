@@ -34,6 +34,28 @@ ol {
     overflow: hidden;
 }
 
+.ready-enter {
+    opacity: 0;
+    transform: translateY(200px);
+}
+
+.enter {
+    opacity: 1;
+    transform: translateY(0);
+    animation: enter 0.6s;
+}
+
+@keyframes enter {
+    from {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .clearfix::after {
     content: '';
     display: block;
@@ -153,7 +175,7 @@ ol {
 }
 
 .top-nav-bar>nav>ul>li:hover>a::after,
-.top-nav-bar>nav>ul>li>a.active::after{
+.top-nav-bar>nav>ul>li>a.active::after {
     width: 100%;
 }
 
@@ -168,7 +190,7 @@ ol {
     white-space: nowrap;
     padding: 12px 40px;
     border-radius: 2px;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
     display: none;
 }
 
@@ -230,7 +252,7 @@ main {
     margin: 170px auto 0;
     background: #FFFFFF;
     border-radius: 2px;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
 }
 
 .user-card .inner {
@@ -345,7 +367,8 @@ main {
 }
 
 .skill {
-    margin-top: 80px;;
+    margin-top: 80px;
+    ;
     text-align: center;
 }
 
@@ -359,7 +382,7 @@ main {
     background: #ffffff;
     padding: 50px 60px;
     border-radius: 2px;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
     text-align: left;
 }
 
