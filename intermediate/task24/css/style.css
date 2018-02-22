@@ -402,6 +402,7 @@ main {
 }
 
 .skill .progress-bar {
+    margin-top: 10px;
     height: 5px;
     background: #fae0e0;
     border-radius: 2px;
@@ -409,9 +410,14 @@ main {
 
 .skill .inner {
     height: 100%;
-    width: 70%;
+    width: 0;
     background: #e8676b;
     border-radius: 2px;
+}
+
+.skill .inner.active {
+    width: 70%;
+    transition: width 1s;
 }
 
 .portfolio {

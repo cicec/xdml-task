@@ -22,6 +22,12 @@ function main() {
             if (elementEnterScrollY > item.offsetTop) {
                 item.classList.remove('ready-enter')
                 item.classList.add('enter')
+                if (item.id === 'skill') {
+                    const inners = document.querySelectorAll('.skill .inner')
+                    setTimeout(() => {
+                        inners.forEach((inner) => { inner.classList.add('active') })
+                    }, 600)
+                }
             }
         })
     }
