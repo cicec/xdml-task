@@ -18,7 +18,23 @@ function main() {
             event.preventDefault()
             const href = event.currentTarget.getAttribute('href')
             const element = document.querySelector(href)
-            window.scrollTo(0, element.offsetTop - 100)
+            const startTop = window.scrollY
+            const endTop = element.offsetTop - 100
+
+            function animate(time) {
+                requestAnimationFrame(animate)
+                TWEEN.update(time)
+            }
+            requestAnimationFrame(animate)
+
+            const coords = { y: startTop }
+            const tween = new TWEEN.Tween(coords)
+                .to({ y: endTop }, 500)
+                .easing(TWEEN.Easing.Cubic.InOut)
+                .onUpdate(() => {
+                    window.scrollTo(0, coords.y)
+                })
+                .start()
         }
     })
 
