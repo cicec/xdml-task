@@ -57,8 +57,12 @@ button {
     transform: translateY(-50%);
     z-index: 1;
     background: transparent;
-    font-size: 32px;
-    color: rgba(255, 255, 255, 0.8)
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.slideshow .window>button:hover {
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .slideshow .window>button:nth-child(1) {

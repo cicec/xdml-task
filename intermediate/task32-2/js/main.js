@@ -58,10 +58,10 @@ function main() {
 
     const endAutoShow = () => { clearInterval(interval) }
 
-    beginAutoShow()
-
     $slides.append($imgs.eq(0).clone(true))
     $slides.prepend($imgs.eq($imgs.length - 1).clone(true))
+
+    beginAutoShow()
 
     for (let i = 0; i < $btns.length; i++) {
         $btns[i].onclick = () => {
@@ -75,6 +75,14 @@ function main() {
     $pageDownBtn.on('click', () => { jumpSlidesTo(currentIndex + 1) })
     $pageUpBtn.on('mouseenter', endAutoShow)
     $pageDownBtn.on('mouseleave', beginAutoShow)
+
+    $(document).on('visibilitychange', () => {
+        if (document.hidden) {
+            endAutoShow()
+        } else {
+            beginAutoShow()
+        }
+    })
 }
 
 window.onload = main
