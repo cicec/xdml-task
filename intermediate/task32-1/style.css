@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+    color: #757575;
+    background-color: #f5f8f9;
+    display: flex;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+.dropdown {
+    margin: auto;
+    position: relative;
+}
+
+.dropdown.open>.dropdown-menu {
+    display: block;
+}
+
+.dropdown .dropdown-toggle {
+    color: #757575;
+    font-size: 18px;
+    padding: 20px;
+}
+
+.dropdown .dropdown-menu {
+    width: 190px;
+    background: #ffffff;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+}
+
+.dropdown .dropdown-menu li {
+    float: none;
+    margin: 0;
+    position: relative;
+    border-bottom: 1px solid #eceff2;
+    font-size: 15px;
+}
+
+.dropdown .dropdown-menu li:hover span:hover {
+    background: #f5f8f9;
+    cursor: pointer;
+}
+
+.dropdown .dropdown-menu li:last-child span {
+    border-bottom: none;
+}
+
+.dropdown .dropdown-menu li span {
+    display: block;
+    padding: 16px 22px;
+}
+
+.dropdown .dropdown-menu li[class^=nav-elipse-]:after {
+    position: absolute;
+    content: '';
+    top: calc(50% - 4px);
+    right: 22px;
+    height: 8px;
+    width: 8px;
+    background: #a6a9ac;
+    border-radius: 8px;
+}
+
+.dropdown .dropdown-menu li.nav-elipse-blue:after {
+    background: #38b7ea;
+}
+
+.dropdown .dropdown-menu li.nav-elipse-red:after {
+    background: #ff7473;
+}
+
+.dropdown .dropdown-menu li.nav-elipse-yellow:after {
+    background: #ffc952;
+}
+
+.dropdown .dropdown-menu li.nav-elipse-green:after {
+    background: #6dc8bf;
+}
