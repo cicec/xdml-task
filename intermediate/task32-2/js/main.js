@@ -8,10 +8,7 @@ function main() {
     const $pageDownBtn = $('#pageDown')
 
     const imgWidth = 800
-    const time = 2000
-
     let currentIndex = 0
-    let interval = null
 
     const markBtn = () => {
         $($btns[currentIndex]).addClass('active').siblings('.active').removeClass('active')
@@ -50,31 +47,17 @@ function main() {
         changeBgImg()
     }
 
-    const beginAutoShow = () => {
-        interval = setInterval(() => {
-            jumpSlidesTo(currentIndex + 1)
-        }, time)
-    }
-
-    const endAutoShow = () => { clearInterval(interval) }
-
     $slides.append($imgs.eq(0).clone(true))
     $slides.prepend($imgs.eq($imgs.length - 1).clone(true))
-
-    beginAutoShow()
 
     for (let i = 0; i < $btns.length; i++) {
         $btns[i].onclick = () => {
             jumpSlidesTo(i)
         }
-        $btns[i].onmouseenter = endAutoShow
-        $btns[i].onmouseleave = beginAutoShow
     }
 
     $pageUpBtn.on('click', () => { jumpSlidesTo(currentIndex - 1) })
     $pageDownBtn.on('click', () => { jumpSlidesTo(currentIndex + 1) })
-    $pageUpBtn.on('mouseenter', endAutoShow)
-    $pageDownBtn.on('mouseleave', beginAutoShow)
 
     $(document).on('visibilitychange', () => {
         if (document.hidden) {
