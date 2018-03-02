@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    display: flex;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.slideshow {
+    margin: auto;
+    text-align: center;
+}
+
+.slideshow .bg-imgs>img {
+    position: fixed;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: .8;
+    filter: blur(50px);
+    display: none;
+}
+
+.slideshow .bg-imgs>img.show {
+    display: block;
+}
+
+.slideshow>h1 {
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
+    font-size: 40px;
+    margin: 40px 0;
+}
+
+.slideshow .window {
+    width: 800px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.slideshow .slides {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.8s;
+}
+
+.slideshow .slides>img {
+    width: 800px;
+}
+
+.slideshow .btns {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.slideshow .btns>button {
+    margin: 0 10px;
+    width: 40px;
+    height: 40px;
+    background: #eeeeee;
+    color: #666666;
+    border-radius: 100%;
+    transition: all 0.2s;
+}
+
+.slideshow .btns>button:hover,
+.slideshow .btns>button.active {
+    background: #666666;
+    color: #eeeeee;
+}
