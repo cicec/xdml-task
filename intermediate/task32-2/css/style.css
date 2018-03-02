@@ -1,6 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     display: flex;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
 }
 
 .slideshow {
@@ -8,37 +21,64 @@ body {
     text-align: center;
 }
 
+.slideshow .bg-imgs>img {
+    position: fixed;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: .8;
+    filter: blur(50px);
+    display: none;
+}
+
+.slideshow .bg-imgs>img.show {
+    display: block;
+}
+
 .slideshow>h1 {
-    color: #666666;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 2px;
     font-size: 40px;
+    margin: 40px 0;
 }
 
 .slideshow .window {
     width: 800px;
     overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.slideshow .window>button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background: transparent;
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.8)
+}
+
+.slideshow .window>button:nth-child(1) {
+    left: 20px;
+}
+
+.slideshow .window>button:nth-child(2) {
+    right: 20px;
 }
 
 .slideshow .slides {
     display: flex;
     align-items: center;
     cursor: pointer;
-    transition: transform 0.8s;
+    transform: translateX(-800px);
+    transition: transform 0.4s;
 }
 
 .slideshow .slides>img {
     width: 800px;
-}
-
-.slideshow .slides>img.current {
-
-}
-
-.slideshow .slides>img.previous {
-
-}
-
-.slideshow .slides>img.next {
-    
 }
 
 .slideshow .btns {
@@ -49,14 +89,10 @@ body {
 
 .slideshow .btns>button {
     margin: 0 10px;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background: #eeeeee;
     color: #666666;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    font-size: 24px;
     border-radius: 100%;
     transition: all 0.2s;
 }

@@ -1,46 +1,80 @@
 function main() {
-    const $btns = $('#btns>button')
     const $slides = $('#slides')
+    const $bgImgs = $('#bgImgs>img')
+    const $btns = $('#btns>button')
+    const $imgs = $('#slides>img')
+
+    const $pageUpBtn = $('#pageUp')
+    const $pageDownBtn = $('#pageDown')
 
     const imgWidth = 800
+    const time = 2000
 
     let currentIndex = 0
     let interval = null
 
-    const moveSlides = (index) => {
-        $slides.css({
-            transform: `translateX(${index * -imgWidth}px)`
-        })
+    const markBtn = () => {
+        $($btns[currentIndex]).addClass('active').siblings('.active').removeClass('active')
     }
 
-    const markBtn = (btn) => {
-        $(btn).addClass('active').siblings('.active').removeClass('active')
+    const changeBgImg = () => {
+        $bgImgs.removeClass('show')
+        $bgImgs[currentIndex].classList.add('show')
+    }
+
+    const moveSlides = (targetIndex) => {
+        $slides.css({
+            transform: `translateX(${-imgWidth - (targetIndex * imgWidth)}px)`
+        })
+        return $slides
+    }
+
+    const jumpSlidesTo = (targetIndex) => {
+        if (targetIndex > $imgs.length - 1) targetIndex = 0
+        if (targetIndex < 0) targetIndex = $imgs.length - 1
+        if (currentIndex === 0 && targetIndex === $imgs.length - 1) {
+            moveSlides(-1).one('transitionend', () => {
+                $slides.hide().offset()
+                moveSlides($imgs.length - 1).show()
+            })
+        } else if (currentIndex === $imgs.length - 1 && targetIndex === 0) {
+            moveSlides($imgs.length).one('transitionend', () => {
+                $slides.hide().offset()
+                moveSlides(0).show()
+            })
+        } else {
+            moveSlides(targetIndex)
+        }
+        currentIndex = targetIndex
+        markBtn()
+        changeBgImg()
     }
 
     const beginAutoShow = () => {
         interval = setInterval(() => {
-            currentIndex += 1
-            if (currentIndex === $btns.length) currentIndex = 0
-            moveSlides(currentIndex)
-            markBtn($btns[currentIndex])
-        }, 1000)
+            jumpSlidesTo(currentIndex + 1)
+        }, time)
     }
 
     const endAutoShow = () => { clearInterval(interval) }
 
+    beginAutoShow()
+
+    $slides.append($imgs.eq(0).clone(true))
+    $slides.prepend($imgs.eq($imgs.length - 1).clone(true))
+
     for (let i = 0; i < $btns.length; i++) {
         $btns[i].onclick = () => {
-            currentIndex = i
-            moveSlides(currentIndex)
-            markBtn($btns[currentIndex])
+            jumpSlidesTo(i)
         }
         $btns[i].onmouseenter = endAutoShow
         $btns[i].onmouseleave = beginAutoShow
     }
 
-    beginAutoShow()
-    $slides.on('mouseenter', endAutoShow)
-    $slides.on('mouseleave', beginAutoShow)
+    $pageUpBtn.on('click', () => { jumpSlidesTo(currentIndex - 1) })
+    $pageDownBtn.on('click', () => { jumpSlidesTo(currentIndex + 1) })
+    $pageUpBtn.on('mouseenter', endAutoShow)
+    $pageDownBtn.on('mouseleave', beginAutoShow)
 }
 
 window.onload = main
