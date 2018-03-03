@@ -20,7 +20,7 @@
             alert(result)
         }
         const jsonpScript = document.createElement('script')
-        jsonpScript.src = `http://localhost:8002/pay?callback=${callbackName}`
+        jsonpScript.src = `http://jack.com:8002/pay?callback=${callbackName}`
         document.body.appendChild(jsonpScript)
 
         const clearJsonp = (event) => {
