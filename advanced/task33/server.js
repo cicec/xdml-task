@@ -22,7 +22,7 @@ var server = http.createServer(function (request, response) {
     const balance = fs.readFileSync('db') - 100
     fs.writeFileSync('db', balance)
     response.setHeader('Content-Type', 'application/javascript')
-    response.write(`${query.callback}('success')`)
+    response.write(`${queryObject.callback}('success')`)
   } else {
     response.statusCode = 404
   }
