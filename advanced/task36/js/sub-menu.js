@@ -18,5 +18,5 @@
             })
         }
     }
-    controller.init()
+    window.addEventListener('load', () => { controller.init() })
 }

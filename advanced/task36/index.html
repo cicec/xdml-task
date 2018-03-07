@@ -12,9 +12,6 @@
 
 <body>
     <div id="loading" class="loading"></div>
-    <script>
-        window.onload = () => { loading.classList.remove('loading') }
-    </script>
     <div id="topNavBar" class="top-nav-bar clearfix">
         <div class="logo">
             <span class="rs">RS</span>
@@ -162,6 +159,9 @@
 
     <script src="https://cdn.bootcss.com/Swiper/4.1.6/js/swiper.min.js"></script>
     <script src="https://cdn.bootcss.com/tween.js/r14/Tween.min.js"></script>
+    <script>
+        window.addEventListener('load', () => { loading.classList.remove('loading') })
+    </script>
     <script src="js/font-icon.js"></script>
     <script src="js/nav-onscroll.js"></script>
     <script src="js/enter-elements.js"></script>
