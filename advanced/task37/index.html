@@ -21,7 +21,7 @@
             <ul class="clearfix">
                 <li><a href="">其他</a></li>
                 <li><a href="">联系</a></li>
-                <li><a href="">日历</a></li>
+                <li><a href="#messages">留言</a></li>
                 <li>
                     <a href="">博客</a>
                     <ul class="submenu">
@@ -158,33 +158,15 @@
 
         <section data-x id="messages" class="messages">
             <h2>留言</h2>
-            <div class="message">
-                <div class="user-info">
-                    <span>sdafdsa</span>
-                    <span>2018-02-12 20:52</span>
-                </div>
-                <div class="message-content">
-                    可以，很强！
-                </div>
-            </div>
-            <div class="message">
-                <div class="user-info">
-                    <span>CC</span>
-                    <span>2018-02-12 20:52</span>
-                </div>
-                <div class="message-content">
-                    可以，很强！
-                </div>
-            </div>
-            <div class="message">
-                <div class="user-info">
-                    <span>ddddd</span>
-                    <span>2018-02-12 20:52</span>
-                </div>
-                <div class="message-content">
-                    可以，很强！
-                </div>
-            </div>
+            <ul>
+                <li class="message hidden">
+                    <div class="user-info">
+                        <span id="nickname"></span>
+                        <span id="datetime"></span>
+                    </div>
+                    <div class="message-content" id="content"></div>
+                </li>
+            </ul>
             <form id="leave-message" class="leave-message">
                 <input type="text" name="nickname" placeholder="你的名字">
                 <input type="text" name="content" placeholder="留言内容">
@@ -206,7 +188,7 @@
     <script src="js/inpage-jump.js"></script>
     <script src="js/sub-menu.js"></script>
     <script src="js/portfolio-slideshow.js"></script>
-    <!-- <script src="js/leave-message.js"></script> -->
+    <script src="js/leave-message.js"></script>
 </body>
 
 </html>

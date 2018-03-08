@@ -459,6 +459,10 @@ main {
     margin: 12px 0;
 }
 
+.messages .message.hidden {
+    display: none;
+}
+
 .messages .message .user-info {
     color: #9a9da2;
     margin-bottom: 24px;
