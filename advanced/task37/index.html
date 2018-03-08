@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人简历</title>
+    <link href="https://cdn.bootcss.com/Swiper/4.1.6/css/swiper.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="loading" class="loading"></div>
+    <div id="topNavBar" class="top-nav-bar clearfix">
+        <div class="logo">
+            <span class="rs">RS</span>
+            <span class="card">card</span>
+        </div>
+        <nav>
+            <ul class="clearfix">
+                <li><a href="">其他</a></li>
+                <li><a href="">联系</a></li>
+                <li><a href="">日历</a></li>
+                <li>
+                    <a href="">博客</a>
+                    <ul class="submenu">
+                        <li>第1篇博客</li>
+                        <li>第2篇博客</li>
+                        <li>第3篇博客</li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#portfolio">作品</a>
+                    <ul class="submenu">
+                        <li>第1个作品</li>
+                        <li>第2个作品</li>
+                        <li>第3个作品</li>
+                    </ul>
+                </li>
+                <li><a href="#skill">技能</a></li>
+                <li><a href="#userCard">关于</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="banner"></div>
+
+    <main>
+        <div data-x id="userCard" class="user-card">
+            <div class="inner clearfix">
+                <div class="avatar">
+                    <img src="./img/avatar.jpg" alt="">
+                </div>
+                <div class="text">
+                    <span class="welcome">HELLO</span>
+                    <h1 class="name">Clancy Song</h1>
+                    <p>前端开发工程师</p>
+                    <hr>
+                    <dl>
+                        <dt>年龄</dt>
+                        <dd>20</dd>
+                        <dt>地址</dt>
+                        <dd>天朝帝都</dd>
+                        <dt>邮箱</dt>
+                        <dd>clancysong@clancy.me</dd>
+                        <dt>电话</dt>
+                        <dd>18888888888</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <footer>
+                <a href="">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-github"></use>
+                        </svg>
+                    </a>
+                <a href="">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-twitter"></use>
+                        </svg>
+                    </a>
+                <a href="">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-weibo"></use>
+                        </svg>
+                    </a>
+            </footer>
+        </div>
+
+        <p class="download">
+            <a href="" class="inner">下载PDF简历</a>
+        </p>
+
+        <p class="introduction">
+            Hello! I’m Robert Smith. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background
+            in project management and customer relations.
+        </p>
+
+        <section data-x id="skill" class="skill">
+            <h2>技能</h2>
+            <ol class="clearfix">
+                <li>
+                    <p>HTML5 &amp; CSS3</p>
+                    <div class="progress-bar">
+                        <div class="inner"></div>
+                    </div>
+                </li>
+                <li>
+                    <p>JavaScript</p>
+                    <div class="progress-bar">
+                        <div class="inner"></div>
+                    </div>
+                </li>
+                <li>
+                    <p>JQuery</p>
+                    <div class="progress-bar">
+                        <div class="inner"></div>
+                    </div>
+                </li>
+                <li>
+                    <p>Vue.js</p>
+                    <div class="progress-bar">
+                        <div class="inner"></div>
+                    </div>
+                </li>
+                <li>
+                    <p>React.js</p>
+                    <div class="progress-bar">
+                        <div class="inner"></div>
+                    </div>
+                </li>
+                <li>
+                    <p>Node.js</p>
+                    <div class="progress-bar">
+                        <div class="inner"></div>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section data-x id="portfolio" class="portfolio">
+            <h2>作品集</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <img class="swiper-slide" src="img/1.jpg" alt="">
+                    <img class="swiper-slide" src="img/2.jpg" alt="">
+                    <img class="swiper-slide" src="img/3.jpg" alt="">
+                    <img class="swiper-slide" src="img/4.jpg" alt="">
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </section>
+
+        <section data-x id="messages" class="messages">
+            <h2>留言</h2>
+            <div class="message">
+                <div class="user-info">
+                    <span>sdafdsa</span>
+                    <span>2018-02-12 20:52</span>
+                </div>
+                <div class="message-content">
+                    可以，很强！
+                </div>
+            </div>
+            <div class="message">
+                <div class="user-info">
+                    <span>CC</span>
+                    <span>2018-02-12 20:52</span>
+                </div>
+                <div class="message-content">
+                    可以，很强！
+                </div>
+            </div>
+            <div class="message">
+                <div class="user-info">
+                    <span>ddddd</span>
+                    <span>2018-02-12 20:52</span>
+                </div>
+                <div class="message-content">
+                    可以，很强！
+                </div>
+            </div>
+            <form id="leave-message" class="leave-message">
+                <input type="text" name="nickname" placeholder="你的名字">
+                <input type="text" name="content" placeholder="留言内容">
+                <button type="submit">留言</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="https://cdn.bootcss.com/Swiper/4.1.6/js/swiper.min.js"></script>
+    <script src="https://cdn.bootcss.com/tween.js/r14/Tween.min.js"></script>
+    <script src="//cdn1.lncld.net/static/js/3.6.0/av-min.js"></script>
+    <script>
+        window.addEventListener('load', () => { loading.classList.remove('loading') })
+    </script>
+    <script src="js/font-icon.js"></script>
+    <script src="js/nav-onscroll.js"></script>
+    <script src="js/enter-elements.js"></script>
+    <script src="js/nav-items-state.js"></script>
+    <script src="js/inpage-jump.js"></script>
+    <script src="js/sub-menu.js"></script>
+    <script src="js/portfolio-slideshow.js"></script>
+    <!-- <script src="js/leave-message.js"></script> -->
+</body>
+
+</html>
