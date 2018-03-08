@@ -488,9 +488,8 @@ main {
 .messages .leave-message button {
     flex: 16%;
     font-size: 16px;
-    /* background: #ffffff; */
-    color: rgba(0, 0, 0, 0.48);
-    border: 1px solid rgba(0, 0, 0, 0.32);
+    background: rgba(0, 0, 0, 0.48);
+    color: #ffffff;
     padding: 8px 24px;
     border-radius: 4px;
 }
