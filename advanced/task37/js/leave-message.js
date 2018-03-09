@@ -47,11 +47,13 @@
             const nickname = this.form.querySelector('input[name=nickname]').value
             const content = this.form.querySelector('input[name=content]').value
             const datetime = new Date()
-            this.model.save({ nickname, content, datetime }).then(() => {
-                this.addMessageNode({ nickname, content, datetime })
-                this.form.querySelector('input[name=nickname]').value = ''
-                this.form.querySelector('input[name=content]').value = ''
-            })
+            if (nickname && content) {
+                this.model.save({ nickname, content, datetime }).then(() => {
+                    this.addMessageNode({ nickname, content, datetime })
+                    this.form.querySelector('input[name=nickname]').value = ''
+                    this.form.querySelector('input[name=content]').value = ''
+                })
+            }
         },
         loadMessage: function loadMessage() {
             this.model.fetch().then((messages) => {
