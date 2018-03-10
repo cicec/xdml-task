@@ -1,0 +1,1 @@
+window.View = selector => document.querySelector(selector)
