@@ -1,15 +1,10 @@
 {
     const view = View('#messages')
     const model = Model({ resourceName: 'message' })
-    const controller = {
-        view: null,
-        model: null,
+    const controller = Controller({
         form: null,
         init: function init() {
-            this.view = view
-            this.model = model
             this.form = document.getElementById('leave-message')
-            this.model.init()
             this.loadMessage()
             this.bindEvents()
         },
@@ -48,7 +43,6 @@
                 this.saveMessage()
             })
         }
-    }
-
-    window.addEventListener('load', () => { controller.init() })
+    })
+    window.addEventListener('load', () => { controller.init(view, model) })
 }
