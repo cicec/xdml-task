@@ -1,0 +1,12 @@
+body {
+    height: 100vh;
+    .container {
+        background: black;
+        width: 50%;
+        height: 50%;
+        .content {
+            background: blue;
+            height: 30%;
+        }
+    }
+}
